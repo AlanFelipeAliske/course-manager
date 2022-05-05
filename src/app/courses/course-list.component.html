@@ -1,7 +1,7 @@
 <h2>Courses</h2>
 
 <div class="form-group row"> 
-    <label for="" class="col-sm-2 col-form-label">filter By:</label>
+    <label for="" class="col-sm-2 col-form-label">Filter By:</label>
     <div class="col-sm-10">
         <input [(ngModel)]="filter" class="form-control">
     </div>
@@ -24,10 +24,13 @@
             <td><img [src]="course.imageUrl" width="50px" class="" alt="imagem form"></td>
             <td>{{course.name}}</td>
             <td>{{course.price}}</td>
-            <td>{{course.code}}</td>
-            <td>{{course.releaseDate}}</td>
+            <td>{{course.code | replace: '-':' '}}</td><!--pipe ( | lowercase )-->
+            <td>{{course.releaseDate | date: 'dd/MM/yyyy'}}</td>
             <td>
                 <app-star [rating]="course.rating"></app-star>
+            </td>
+            <td>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
             </td>
             <td></td>
         </tr>
