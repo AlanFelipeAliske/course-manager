@@ -4,7 +4,8 @@ import { Course } from "./course";
 import { CourseServise } from "./course.servise";
 
 @Component({
-    templateUrl: './course-info.component.html'
+    templateUrl: './course-info.component.html',
+    styleUrls: ['./course-list.component.css']
 })
 
 export class CourseInfoComponent implements OnInit{
