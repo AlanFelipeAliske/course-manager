@@ -1,1 +1,16 @@
-<h2>title</h2>
+<h2>{{ title }}</h2>
+<hr>
+
+<form action="">
+    <div class="form-group row"> 
+        <label for="" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="course.name" required name="name" #courseName="ngModel" [ngClass]="{'is-invalid': courseName.invalid}" class="form-control">
+            <div class="invalid-feedback">
+                <span>Course name is required</span>
+            </div>
+            <div>Value: {{courseName.value}}</div><br> 
+            <div>Invalid: {{courseName.invalid}}</div> 
+        </div>
+    </div>
+</form>

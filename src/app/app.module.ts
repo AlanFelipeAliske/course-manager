@@ -26,13 +26,13 @@ import { CourseInfoComponent } from './courses/course-info.component';
     FormsModule,
     RouterModule.forRoot([
       {
+        path: '', redirectTo: 'courses', pathMatch: 'full'
+      },
+      {
         path: 'courses', component: CourseListComponent
       },
       {
         path: 'courses/info/:id', component: CourseInfoComponent
-      },
-      {
-        path: '', redirectTo: 'courses', pathMatch: 'full'
       },
       {
         path: '**', component: Error404Component

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Course } from "./course";
 import { CourseServise } from "./course.servise";
@@ -7,13 +7,15 @@ import { CourseServise } from "./course.servise";
     templateUrl: './course-info.component.html'
 })
 
-export class CourseInfoComponent{
+export class CourseInfoComponent implements OnInit{
 
-    course: Course | undefined;
+    title = 'Edit'
+    
+    course!: Course;
 
-    constructor(private activatedRoute: ActivatedRoute, private courseServise: CourseServise){}
+    constructor(private activatedRoute: ActivatedRoute, private CourseServise: CourseServise){}
 
     ngOnInit(): void {
-        this.course = this.courseServise.retriveById(+this.activatedRoute.snapshot.paramMap.get('id')!);
+        this.course = this.CourseServise.retriveById(+this.activatedRoute.snapshot.paramMap.get('id')!);
     }
 }
