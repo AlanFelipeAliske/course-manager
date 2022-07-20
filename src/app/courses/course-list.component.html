@@ -16,7 +16,8 @@
             <th>code</th>
             <th>Release Date</th>
             <th>Rating</th>
-            <th>Option</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -30,8 +31,10 @@
                 <app-star [rating]="course.rating"></app-star>
             </td>
             <td>
-                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-1">Edit</a>
-                <button (click)="deleteById(course.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+            </td>
+            <td>
+                <button (click)="deleteById(course.id)" class="btn btn-danger">Delete</button>
             </td>
             <td></td>
         </tr>
